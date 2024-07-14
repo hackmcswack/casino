@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Gambling</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+  
+<header>
+  <a href="index.html" id="naddevegas">NaddeVeGaS</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">  <!-- Denne gjør at koden registrerer trykk på hamburger-menyen -->
+  <nav>
+    <ul>
+      <li><a href="./casino/scoreboard.html">Scoreboard</a></li> 
+      <li><a href="./casino/blackjack.html">Blackjack</a></li> <!-- Link til blackjack-siden -->
+      <li><a href="./casino/dice.html">Dice-Roll</a></li> <!-- Link til terningspill-siden -->
+      <!-- Link som ikke leder noen vei derav "#" -->
+      <li><a href="#">Slots (CS)</a></li>
+    </ul>
+  </nav>
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label> 
+</header>
+    
+
+  <!-- content er en wrapper rundt alt inholdet på siden utenom headeren -->
+<div class="content">
+  <div id="text_navn" class="text">
+    <!-- denne h2-en brukes med js til å vise didricoin -->
+    <h2 id="didricoin"></h2>
+    <button id="pushDrc" class="button">Save Didricoin</button>
+  </div>
+  <div id="games">
+    <a class="text gamelink" href="./casino/scoreboard.html">
+      <div>Scoreboard</div>
+    </a> 
+    <br>
+    <a class="text gamelink" href="./casino/dice.html">
+      <div>Didrik Dice-Roll</div>
+    </a> 
+    <br>
+    <a class="text gamelink" href="./casino/blackjack.html">
+      <div>Bruaas Blackjack</div>
+    </a>  
+    <br>
+    <a class="text gamelink" href="#">
+      <div>Susanne Slots (Coming Soon)</div>
+    </a> 
+  </div>
+
+</div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

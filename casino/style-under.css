@@ -1,0 +1,303 @@
+/*  
+Vi har en fin fargepalett. Alt skal bestå av disse 4 fargene:
+Mørkegrønn: #062C30
+Turkis: #05595B
+Gul: #E2D784
+Hvit: #F5F5F5
+*/
+
+/* Samme som index css-siden 
+<-----------
+*/
+:root {
+    --morkegronn: rgb(6, 44, 48);
+    --turkis: rgb(5, 89, 91);
+    --gul: rgb(226, 215, 132);
+    --hvit: rgb(245, 245, 245);
+  
+    --box-shadow: rgba(0,0,0,0.2);
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    background: var(--turkis);
+    font-weight: 400;
+    font-family: 'Century Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  body::after {
+    content: '';
+    display: block;
+    height: 190px;
+  }
+  
+  header {
+    background: var(--morkegronn);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0px 2px 16px 8px var(--box-shadow);
+  }
+  
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: var(--hvit);
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--morkegronn);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  
+  
+  #naddevegas {
+    height: 2em;
+    text-decoration: none;
+    color: var(--hvit);
+    font-size: 2em;
+    margin-right: 2em;
+    margin-left: 1em;
+    padding-top: 0.5em;
+  }
+  
+  
+  nav a {
+    color: var(--hvit);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 150ms ease 100ms;
+  }
+  
+  nav a:hover {
+    color: var(--gul);
+  }
+  
+  .nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  
+  nav ul {
+    position:relative;
+    list-style-type: none;
+  }
+  
+  
+  .content {
+    background-color: rgba(0,0,0,0);
+    background-blend-mode: multiply;
+    display: grid;
+    place-items: center;
+    font-weight: 550;
+    padding: 5%;
+  }
+  
+  .text {
+    padding: 2.5em;
+    text-align: center;
+    color: var(--hvit);
+    text-decoration: none;
+  }
+  
+  /* 
+  ---------->
+  Samme som index css-del
+  */
+  
+  #text_navn {
+    color: var(--hvit);
+    margin-bottom: -15px;
+  }
+  
+  /* Styling av diven som inneholder hele spillet og teksten */
+  .text-spill {
+    background-color: var(--morkegronn);
+    border: 3px solid var(--hvit);
+    border-radius: 8px;
+    padding: 2rem;
+    padding-top: 15px;
+    color: var(--hvit);
+    box-shadow: 1px 1px 10px 2px;
+  }
+  
+  .text-spill > h1 {
+    text-decoration: underline;
+  }
+  
+  
+  
+  #betBox {
+    font-size: 20px;
+  }
+  
+  /* Border og skriftfarge på input-feltet */
+  #bet {
+    border: 2px solid var(--hvit);
+    border-radius: 4px;
+    color: var(--hvit);
+  }
+  
+  /* bakgrunnsfarge og font størrelse */
+  #bet, textarea {
+    background-color: var(--turkis);
+    font-size: 15px;
+  }
+  
+  /* Fargen på det som står når det ikke er skrevet noe */
+  #bet::placeholder{
+    color: var(--hvit);
+  }
+  
+  /* Utseende av knappen */
+  .button {
+    background-color: var(--turkis);
+    color: var(--hvit);
+    border: 2px solid var(--hvit);
+    border-radius: 4px;
+    padding: 1px 15px;
+    font-size: 15px;
+  }
+  
+  /* Endrer cursor når den er over knappen */
+  .button:hover {
+    cursor: pointer;
+  }
+  
+  .scoreboard_button {
+    margin: 5px;
+  }
+  
+  /* setter bildet i terning-spillet i midten av div-en */
+  #mainImg {
+    text-align: center;
+  }
+  
+  
+  /* Universell utforming del, for mindre skjærmer */
+  @media screen and (min-width: 900px) {
+    .nav-toggle-label {
+      display: none;
+    }
+  
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+  
+    nav {
+      position: relative;
+      text-align: left;
+      transition: none;
+      transform: scale(1,1);
+      background: none;
+      top: initial;
+      left: initial;
+      
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+    nav ul {
+      display: flex;
+    }
+  
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+    }
+  
+    nav a {
+      opacity: 1;
+      position: relative;
+    }
+  
+    nav a::before {
+      content: '';
+      display: block;
+      height: 4px;
+      background: var(--gul);
+      position: absolute;
+      top: -0.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 150ms;
+    }
+  
+    nav a:hover::before {
+      transform: scale(1,1);
+    }  
+  }

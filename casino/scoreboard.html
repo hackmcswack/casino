@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="style-under.css" type="text/css">
+</head>
+<body>
+
+  
+<header>
+  <a href="../index.html" id="naddevegas">NaddeVeGaS</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">  <!-- Denne gjør at 
+  koden registrerer trykk på hamburger-menyen -->
+  <nav>
+    <ul>
+      <li><a href="../casino/scoreboard.html">Scoreboard</a></li>
+      <li><a href="../casino/blackjack.html">Blackjack</a></li>
+      <li><a href="../casino/dice.html">Dice-roll</a></li>
+      <li><a href="#">Slots (CS)</a></li>
+    </ul>
+  </nav>
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+</header>
+
+<div class="content">
+  <div class="text">
+    <br>
+    <h1>NaddeVeGaS Scoreboard</h1>
+    <!-- Legg til et input skjema her -->
+  
+    <div id="nybruker">
+      <label for="ting">Brukernavn</label>
+      <input type="text" id="ting">
+  
+  
+      <button id="registrer" class="button scoreboard_button">Registrer</button>
+    </div>
+  
+    <div id="hoved"></div>
+  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  </div>
+</div>
+  
+<script src="scoreboard.js"></script>
+</body>
+
+</html>

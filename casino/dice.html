@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice</title>
+  <link rel="stylesheet" href="style-under.css" type="text/css">
+</head>
+<body>
+
+
+<header>
+  <a href="../index.html" id="naddevegas">NaddeVeGaS</a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">  <!-- Denne gjør at 
+  koden registrerer trykk på hamburger-menyen -->
+  <nav>
+    <ul>
+      <li><a href="../casino/scoreboard.html">Scoreboard</a></li>
+      <li><a href="../casino/blackjack.html">Blackjack</a></li>
+      <li><a href="../casino/dice.html">Dice-roll</a></li>
+      <li><a href="#">Slots (CS)</a></li>
+    </ul>
+  </nav>
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+</header>
+  
+  
+  
+  
+<div class="content">
+  <div id="text_navn" class="text">
+    <h2 id="didricoin"></h2>
+  </div>
+  
+  <div class="text-spill diceShadow">
+    <h1>Didrik Dice-Roll</h1>
+    <h3>Rull 6 på terning og få 5x gevinst!</h3>
+    
+    <div id="mainImg">
+      <img src="./bilder/dice.png" width="150px" height="150px">
+    </div>
+    
+    
+    <div id="betBox">
+      <label for="bet">Current Bet</label>
+      <input type="number" id="bet" placeholder="0">
+      <button class="button">Roll</button>
+    </div>
+    
+    
+    <p id="resultat"></p>
+    <p id="payout"></p>
+  </div>
+</div>   
+
+    
+<script src="dice.js"></script>
+</body>
+</html>

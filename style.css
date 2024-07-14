@@ -1,0 +1,182 @@
+/*  
+Vi har en fin fargepalett. Alt skal bestå av disse 4 fargene:
+Mørkegrønn: #062C30
+Turkis: #05595B
+Gul: #E2D784
+Hvit: #F5F5F5
+*/
+
+/* Lager "presets" for de fargene vi skal bruke */
+:root {
+    --morkegronn: rgb(6, 44, 48);
+    --turkis: rgb(5, 89, 91);
+    --gul: rgb(226, 215, 132);
+    --hvit: rgb(245, 245, 245);
+  
+    --box-shadow: rgba(0,0,0,0.2);
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;  /* setter minimumshøyden til 100% av skermstørrelsen */
+    background: var(--turkis);
+    font-weight: 400;
+    font-family: 'Century Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  body::after {
+    content: '';
+    display: block;
+    height: 190px;
+  }
+  
+  header {
+    background: var(--morkegronn); /* bakgrunnsfarge */
+    text-align: center;
+    position: fixed;
+    z-index: 999; /* Gjør at headeren er øverst */
+    width: 100%;
+    padding: 1rem; /* rem er avhengig av den originale tekststørrelsen */
+    box-shadow: 0px 2px 16px 8px var(--box-shadow);
+    /* legger til bitte litt skygge under nav-baren*/
+  }
+  
+  /* "!important" gjør at elementet får den satte egenskapen/verdien uansett (med mindre en annen "!important" blir brukt for å overskrive igjen) */
+  .nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+  
+  /* posisjonen til hamburgermenyen */
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* del for utseende av hamburgermenyen */
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: var(--hvit); /* fargen på strekene */
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+  
+  
+  nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--morkegronn);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top; /* hvor hover-funksjonen kommer i forhold til teksten */
+    transition: transform 400ms ease-in-out; /* animasjonen til hover-funksjonen */
+  }
+  
+  /* De forskjellige elementene i navbaren */
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  /* Listepunkt */
+  nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  
+  
+  /* Utseendet til Naddevegas "logo-en" */
+  #naddevegas {
+    height: 2em; /* em er avhengig av parent font-size */
+    text-decoration: none;
+    color: var(--hvit);
+    font-size: 2em;
+    margin-right: 2em;
+    margin-left: 1em;
+    padding-top: 0.5em;
+  }
+  
+  /* Styling av navbar teksten */
+  nav a {
+    color: var(--hvit);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 150ms ease 100ms;
+  }
+  
+  /* Fargen på teksten når du hovrer over den */
+  nav a:hover {
+    color: var(--gul);
+  }
+  
+  .nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  
+  nav ul {
+    position:relative;
+    list-style-type: none;
+  }
+  
+  
+  
+  /* Generell styling  */
+  .content {
+    background-color: rgba(0,0,0,0);
+    background-blend-mode: multiply;
+    display: grid;
+    place-items: center;
+    font-weight: 550;
+    padding: 5%;
+  }
+  
+  /* Plasserer teksten midt i div-en */
+  .text {
+    padding: 2.5em;
+    text-align: center;
+    color: var(--gul);
+    text-decoration: none;
+  }
+  
+  
